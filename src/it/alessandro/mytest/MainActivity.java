@@ -67,7 +67,6 @@ public class MainActivity extends FragmentActivity {
 	// Hashmap for ListView
 	ArrayList<HashMap<String, String>> placesList = null;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -251,17 +250,9 @@ public class MainActivity extends FragmentActivity {
 				params.put(P_LOCATION, latitude + "," + longitude);
 				params.put(P_RADIUS, "1000");
 				params.put(P_TYPES, "restaurant");
-				params.put(P_KEY, "AIzaSyDClGU4fSgxzhFcpZVdib68LsM5QTvewLs");
+				params.put(P_KEY, "AIzaSyDClGU4fSgxzhFcpZVdib68LsM5QTvewLs"); //Your key goes here
 				params.put(P_SENSOR, "true");
 				JSONObject response = ServerUtilities
-//						.getJSON(
-//								ACTION_GETPLACES
-//										+ "location="
-//										+ latitude
-//										+ ","
-//										+ longitude
-//										+ "&radius=1000&types=restaurant&sensor=true&key=AIzaSyDClGU4fSgxzhFcpZVdib68LsM5QTvewLs",
-//								"");
 				.getJSON(ACTION_GETPLACES, params);
 				SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 				SharedPreferences.Editor editor = settings.edit();
